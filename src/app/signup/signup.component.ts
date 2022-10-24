@@ -31,7 +31,7 @@ export class SignupComponent implements OnInit {
     }
 
     console.log(data)
-    alert("Successfully added")
+
     this.myapi.signupData(data).subscribe(
       (res)=>{
         alert("successfully added")
