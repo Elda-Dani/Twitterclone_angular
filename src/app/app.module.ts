@@ -6,11 +6,24 @@ import { RouterModule, Routes } from '@angular/router';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { LoginComponent } from './login/login.component';
-
+import { SignupComponent } from './signup/signup.component';
+import { HttpClientModule } from '@angular/common/http';
+import { TweetpageComponent } from './tweetpage/tweetpage.component';
+import { NavbarComponent } from './navbar/navbar.component';
+import { MytweetComponent } from './mytweet/mytweet.component';
 
 const appRoutes:Routes=[
   {
     path:"",component:LoginComponent
+  },
+  {
+    path:"signup",component:SignupComponent
+  },
+  {
+    path:"tweet",component:TweetpageComponent
+  },
+  {
+    path:"mytw",component:MytweetComponent
   }
 ]
 
@@ -18,13 +31,18 @@ const appRoutes:Routes=[
 @NgModule({
   declarations: [
     AppComponent,
-    LoginComponent
+    LoginComponent,
+    SignupComponent,
+    TweetpageComponent,
+    NavbarComponent,
+    MytweetComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     RouterModule.forRoot(appRoutes),
-    FormsModule
+    FormsModule,
+    HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent]
