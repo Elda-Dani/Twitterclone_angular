@@ -23,8 +23,9 @@ export class LoginComponent implements OnInit {
     this.myapi.login(data).subscribe(
       (resp:any)=>{
         if (resp.length>0) {
+      
+          localStorage.setItem("stored_name",resp[0].name)
           localStorage.setItem("stored_id",resp[0].id)
-          
 this.myRouter.navigate(["/tweet"])
           
         } else {

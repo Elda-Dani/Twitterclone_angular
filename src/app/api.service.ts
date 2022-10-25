@@ -16,8 +16,15 @@ login=(data:any)=>{
   return this.http.post("http://localhost:8080/login",data)
 }
 
-showPost=(data:any)=>{
-  return this.http.post("http://localhost:8080/showpost",data)
+
+
+addPost=(data:any)=>{
+  return this.http.post("http://localhost:8080/addpost",data)
+}
+
+viewPost=()=>{
+  return this.http.get("http://localhost:8080/viewpost")
+
 }
 
 }

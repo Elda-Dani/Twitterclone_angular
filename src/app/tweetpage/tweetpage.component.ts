@@ -8,26 +8,38 @@ import { ApiService } from '../api.service';
 })
 export class TweetpageComponent implements OnInit {
 
-  constructor(private myapi:ApiService) { }
+  constructor(private myapi:ApiService) {
+    this.fetchData()
+   }
 
 post=""
  
-
   id=localStorage.getItem("stored_id")
  
   readvalue=()=>{
     let data={
-      "post":this.post
+      "userid":localStorage.getItem("stored_id"),
+ "post":this.post
     }
     console.log(data)
-    this.myapi.showPost(data).subscribe(
+    this.myapi.addPost(data).subscribe(
 
       (resp)=>{
-        console.log(resp)
-        this.dataD=resp
-        this.post
+      
       }
     )
+    this.fetchData()
+        this.post
+  }
+
+  fetchData=()=>{
+this.myapi.viewPost().subscribe(
+  (resp)=>{
+    this.dataD=resp
+  }
+
+)
+
   }
 
   dataD:any=[]
