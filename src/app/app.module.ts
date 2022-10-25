@@ -9,6 +9,8 @@ import { LoginComponent } from './login/login.component';
 import { SignupComponent } from './signup/signup.component';
 import { HttpClientModule } from '@angular/common/http';
 import { TweetpageComponent } from './tweetpage/tweetpage.component';
+import { NavbarComponent } from './navbar/navbar.component';
+import { MytweetComponent } from './mytweet/mytweet.component';
 
 const appRoutes:Routes=[
   {
@@ -19,6 +21,9 @@ const appRoutes:Routes=[
   },
   {
     path:"tweet",component:TweetpageComponent
+  },
+  {
+    path:"mytw",component:MytweetComponent
   }
 ]
 
@@ -28,7 +33,9 @@ const appRoutes:Routes=[
     AppComponent,
     LoginComponent,
     SignupComponent,
-    TweetpageComponent
+    TweetpageComponent,
+    NavbarComponent,
+    MytweetComponent
   ],
   imports: [
     BrowserModule,
